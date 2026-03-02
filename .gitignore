@@ -36,3 +36,12 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
+
+# Local Scripts & Documentation
+scripts/git-workflow*.ps1
+scripts/git-workflow*.sh
+setup-git-flow*.ps1
+setup-git-flow*.sh
+docs/GIT_FLOW_*.md
+docs/POWERSHELL_*.md
+ALL_SET.md

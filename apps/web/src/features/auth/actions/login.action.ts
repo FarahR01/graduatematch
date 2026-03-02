@@ -21,7 +21,7 @@ export async function loginAction(
   credentials: LoginCredentials
 ): Promise<{ success: boolean; error?: string }> {
   try {
-    const response = await api.post<LoginResponse>('/auth/login', credentials);
+    const _response = await api.post<LoginResponse>('/auth/login', credentials);
 
     // TODO: Set auth cookie/session
     // This will be implemented with proper auth setup

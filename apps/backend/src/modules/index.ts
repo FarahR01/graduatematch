@@ -1,0 +1,11 @@
+export { User, UserRole } from './user/domain/user.entity';
+export { Graduate } from './graduate/domain/graduate.entity';
+export { GraduateSkill } from './graduate/domain/graduate-skill.entity';
+export { GraduateBadge } from './graduate/domain/graduate-badge.entity';
+export { Company } from './company/domain/company.entity';
+export { Skill } from './skill/domain/skill.entity';
+export { Badge } from './badge/domain/badge.entity';
+export { Job, JobStatus } from './job/domain/job.entity';
+export { JobSkill } from './job/domain/job-skill.entity';
+export { Application, ApplicationStatus } from './application/domain/application.entity';
+export { MatchScore } from './match-score/domain/match-score.entity';

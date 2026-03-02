@@ -1,0 +1,74 @@
+# Dependencies
+node_modules
+**/node_modules
+
+# Build outputs
+dist
+**/dist
+.turbo
+**/.turbo
+
+# Development files
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# Test files
+coverage
+**/*.spec.ts
+**/*.test.ts
+test
+**/__tests__
+
+# Docker
+Dockerfile*
+docker-compose*
+.docker
+.dockerignore
+
+# Documentation
+*.md
+!README.md
+docs
+
+# Environment files (secrets)
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+tmp
+temp
+*.tmp
+
+# Logs
+logs
+*.log
+
+# Build cache
+.cache
+.npm
+.pnpm-store
+
+# Misc
+*.tgz
+*.tar.gz
+.turbo

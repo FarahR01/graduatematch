@@ -1,0 +1,33 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Get the commit message
+COMMIT_MSG_FILE=$1
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+
+# Validate commit message format using conventional commits
+# Pattern: type(scope): subject
+# Types: feat|fix|docs|style|refactor|perf|test|chore|ci|build|revert
+
+if ! echo "$COMMIT_MSG" | grep -qE '^(feat|fix|docs|style|refactor|perf|test|chore|ci|build|revert)(\(.+\))?!?: .{1,}'; then
+  echo "❌ Commit message does not follow Conventional Commits format"
+  echo ""
+  echo "Expected format:"
+  echo "  type(scope): subject"
+  echo ""
+  echo "Valid types: feat, fix, docs, style, refactor, perf, test, chore, ci, build, revert"
+  echo ""
+  echo "Examples:"
+  echo "  feat(auth): add login functionality"
+  echo "  fix(api): correct response handling"
+  echo "  docs: update README"
+  exit 1
+fi
+
+# Check max length (72 characters for commit message subject)
+FIRST_LINE=$(echo "$COMMIT_MSG" | head -1)
+if [ ${#FIRST_LINE} -gt 72 ]; then
+  echo "❌ First line of commit message must be 72 characters or less"
+  echo "Current length: ${#FIRST_LINE}"
+  exit 1
+fi

@@ -1,21 +1,10 @@
-import {
-  Injectable,
-  UnauthorizedException,
-  ConflictException,
-  Logger,
-} from '@nestjs/common';
+import { Injectable, UnauthorizedException, ConflictException, Logger } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
 import * as crypto from 'crypto';
 import { UserService } from '@/modules/user/services/user.service';
 import { User, UserRole } from '@/modules/user/domain/user.entity';
-import {
-  RegisterDto,
-  LoginDto,
-  TokensResponseDto,
-  AuthResponseDto,
-  TokenPayload,
-} from '../dto';
+import { RegisterDto, LoginDto, TokensResponseDto, AuthResponseDto, TokenPayload } from '../dto';
 
 /**
  * AuthService - Handles authentication logic
@@ -28,7 +17,7 @@ export class AuthService {
   constructor(
     private readonly userService: UserService,
     private readonly jwtService: JwtService,
-    private readonly configService: ConfigService,
+    private readonly configService: ConfigService
   ) {}
 
   /**
@@ -80,10 +69,7 @@ export class AuthService {
       throw new UnauthorizedException('Account is deactivated');
     }
 
-    const isPasswordValid = await this.verifyPassword(
-      dto.password,
-      user.passwordHash,
-    );
+    const isPasswordValid = await this.verifyPassword(dto.password, user.passwordHash);
 
     if (!isPasswordValid) {
       throw new UnauthorizedException('Invalid credentials');
@@ -181,10 +167,7 @@ export class AuthService {
   /**
    * Verify password against hash
    */
-  private async verifyPassword(
-    password: string,
-    hash: string,
-  ): Promise<boolean> {
+  private async verifyPassword(password: string, hash: string): Promise<boolean> {
     return new Promise((resolve, reject) => {
       const [salt, key] = hash.split(':');
       crypto.pbkdf2(password, salt, 100000, 64, 'sha512', (err, derivedKey) => {

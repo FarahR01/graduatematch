@@ -25,8 +25,7 @@ export const ROUTES = {
   COMPANY_JOB_NEW: '/company/jobs/new',
   COMPANY_JOB_EDIT: (id: string) => `/company/jobs/${id}/edit` as const,
   COMPANY_CANDIDATES: '/company/candidates',
-  COMPANY_CANDIDATE_DETAIL: (id: string) =>
-    `/company/candidates/${id}` as const,
+  COMPANY_CANDIDATE_DETAIL: (id: string) => `/company/candidates/${id}` as const,
 
   // API routes (for internal use)
   API: {

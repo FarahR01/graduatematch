@@ -20,9 +20,7 @@ export default function LoginPage() {
         <Link href={ROUTES.HOME} className="mx-auto">
           <h1 className="text-2xl font-bold">{siteConfig.name}</h1>
         </Link>
-        <p className="text-sm text-muted-foreground">
-          Welcome back! Sign in to continue
-        </p>
+        <p className="text-sm text-muted-foreground">Welcome back! Sign in to continue</p>
       </div>
 
       {/* Login Form Card */}
@@ -30,10 +28,7 @@ export default function LoginPage() {
         {/* TODO: Add LoginForm client component */}
         <form className="space-y-4">
           <div className="space-y-2">
-            <label
-              htmlFor="email"
-              className="text-sm font-medium leading-none"
-            >
+            <label htmlFor="email" className="text-sm font-medium leading-none">
               Email
             </label>
             <input
@@ -46,16 +41,10 @@ export default function LoginPage() {
 
           <div className="space-y-2">
             <div className="flex items-center justify-between">
-              <label
-                htmlFor="password"
-                className="text-sm font-medium leading-none"
-              >
+              <label htmlFor="password" className="text-sm font-medium leading-none">
                 Password
               </label>
-              <Link
-                href={ROUTES.FORGOT_PASSWORD}
-                className="text-sm text-primary hover:underline"
-              >
+              <Link href={ROUTES.FORGOT_PASSWORD} className="text-sm text-primary hover:underline">
                 Forgot password?
               </Link>
             </div>

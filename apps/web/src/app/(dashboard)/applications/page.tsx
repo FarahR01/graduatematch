@@ -14,10 +14,7 @@ export const metadata: Metadata = {
 export default function ApplicationsPage() {
   return (
     <>
-      <PageHeader
-        title="Applications"
-        description="Track the status of your job applications"
-      />
+      <PageHeader title="Applications" description="Track the status of your job applications" />
 
       {/* Stats Cards */}
       <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -36,20 +33,18 @@ export default function ApplicationsPage() {
 
       {/* Filter Tabs */}
       <div className="mb-4 flex gap-2 border-b">
-        {['All', 'Applied', 'Reviewed', 'Interview', 'Offered', 'Rejected'].map(
-          (tab) => (
-            <button
-              key={tab}
-              className={`px-4 py-2 text-sm font-medium ${
-                tab === 'All'
-                  ? 'border-b-2 border-primary text-primary'
-                  : 'text-muted-foreground hover:text-foreground'
-              }`}
-            >
-              {tab}
-            </button>
-          )
-        )}
+        {['All', 'Applied', 'Reviewed', 'Interview', 'Offered', 'Rejected'].map((tab) => (
+          <button
+            key={tab}
+            className={`px-4 py-2 text-sm font-medium ${
+              tab === 'All'
+                ? 'border-b-2 border-primary text-primary'
+                : 'text-muted-foreground hover:text-foreground'
+            }`}
+          >
+            {tab}
+          </button>
+        ))}
       </div>
 
       {/* Applications List */}
@@ -60,26 +55,17 @@ export default function ApplicationsPage() {
           { status: 'reviewed' as const, company: 'Startup Inc', role: 'Full Stack Engineer' },
           { status: 'applied' as const, company: 'Big Company', role: 'Junior Developer' },
         ].map((app, i) => (
-          <div
-            key={i}
-            className="rounded-lg border bg-card p-6"
-          >
+          <div key={i} className="rounded-lg border bg-card p-6">
             <div className="flex items-start justify-between">
               <div>
                 <h3 className="font-semibold">{app.role}</h3>
                 <p className="text-sm text-muted-foreground">{app.company}</p>
               </div>
-              <span className="text-sm text-muted-foreground">
-                Applied Jan {20 + i}, 2026
-              </span>
+              <span className="text-sm text-muted-foreground">Applied Jan {20 + i}, 2026</span>
             </div>
 
             <div className="mt-4">
-              <ApplicationStatusTracker
-                status={app.status}
-                size="sm"
-                orientation="horizontal"
-              />
+              <ApplicationStatusTracker status={app.status} size="sm" orientation="horizontal" />
             </div>
           </div>
         ))}

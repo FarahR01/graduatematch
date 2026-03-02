@@ -19,12 +19,12 @@ export default function HomePage() {
           <div className="container">
             <div className="mx-auto max-w-2xl text-center">
               <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-                Get matched with jobs that{' '}
-                <span className="text-primary">actually fit</span> your skills
+                Get matched with jobs that <span className="text-primary">actually fit</span> your
+                skills
               </h1>
               <p className="mt-6 text-lg leading-8 text-muted-foreground">
-                {siteConfig.description}. Stop guessing and start getting
-                interviews with our AI-powered skill matching.
+                {siteConfig.description}. Stop guessing and start getting interviews with our
+                AI-powered skill matching.
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <Link
@@ -33,10 +33,7 @@ export default function HomePage() {
                 >
                   Get Started Free
                 </Link>
-                <Link
-                  href={ROUTES.JOBS}
-                  className="text-sm font-semibold leading-6"
-                >
+                <Link href={ROUTES.JOBS} className="text-sm font-semibold leading-6">
                   Browse Jobs <span aria-hidden="true">→</span>
                 </Link>
               </div>
@@ -47,12 +44,9 @@ export default function HomePage() {
         {/* Value Props */}
         <section className="border-t py-20">
           <div className="container">
-            <h2 className="text-center text-3xl font-bold">
-              Why GraduateMatch?
-            </h2>
+            <h2 className="text-center text-3xl font-bold">Why GraduateMatch?</h2>
             <p className="mx-auto mt-4 max-w-2xl text-center text-muted-foreground">
-              We&apos;re not another job board. We&apos;re your career
-              accelerator.
+              We&apos;re not another job board. We&apos;re your career accelerator.
             </p>
 
             <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -75,8 +69,8 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-lg font-semibold">AI Skill Matching</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  See your exact match percentage for every job. Know exactly
-                  what skills you have and what&apos;s missing.
+                  See your exact match percentage for every job. Know exactly what skills you have
+                  and what&apos;s missing.
                 </p>
               </div>
 
@@ -99,8 +93,8 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-lg font-semibold">Verified Badges</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Prove your skills with assessments. Stand out from the crowd
-                  with verified badges that employers trust.
+                  Prove your skills with assessments. Stand out from the crowd with verified badges
+                  that employers trust.
                 </p>
               </div>
 
@@ -123,8 +117,8 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-lg font-semibold">Skill Gap Analysis</h3>
                 <p className="mt-2 text-sm text-muted-foreground">
-                  Know exactly what to learn next. We analyze your target jobs
-                  and recommend a learning path.
+                  Know exactly what to learn next. We analyze your target jobs and recommend a
+                  learning path.
                 </p>
               </div>
             </div>
@@ -164,9 +158,7 @@ export default function HomePage() {
                     {item.step}
                   </div>
                   <h3 className="mt-4 text-lg font-semibold">{item.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    {item.desc}
-                  </p>
+                  <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
                 </div>
               ))}
             </div>
@@ -179,8 +171,7 @@ export default function HomePage() {
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-bold">Ready to find your fit?</h2>
               <p className="mt-4 text-muted-foreground">
-                Join thousands of graduates who found their dream jobs through
-                skill-based matching.
+                Join thousands of graduates who found their dream jobs through skill-based matching.
               </p>
               <Link
                 href={ROUTES.REGISTER}

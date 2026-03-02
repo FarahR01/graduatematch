@@ -20,7 +20,7 @@ export const databaseConfig = registerAs(
       idleTimeoutMillis: parseInt(process.env.DB_IDLE_TIMEOUT_MS || '30000', 10),
       connectionTimeoutMillis: parseInt(process.env.DB_CONN_TIMEOUT_MS || '2000', 10),
     },
-  }),
+  })
 );
 
 export type DatabaseConfig = ReturnType<typeof databaseConfig>;

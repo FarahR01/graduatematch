@@ -37,11 +37,7 @@ export class UserService {
   /**
    * Create new user
    */
-  async createUser(data: {
-    email: string;
-    passwordHash: string;
-    role: UserRole;
-  }): Promise<User> {
+  async createUser(data: { email: string; passwordHash: string; role: UserRole }): Promise<User> {
     const exists = await this.userRepository.existsByEmail(data.email);
     if (exists) {
       throw new BadRequestException('Email already registered');

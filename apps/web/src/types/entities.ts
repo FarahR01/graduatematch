@@ -3,12 +3,7 @@
  * These should match the backend entity definitions
  */
 
-import type {
-  SkillLevel,
-  ApplicationStatus,
-  JobRole,
-  DegreeType,
-} from '@/lib/constants';
+import type { SkillLevel, ApplicationStatus, JobRole, DegreeType } from '@/lib/constants';
 
 /**
  * User entity

@@ -31,15 +31,12 @@ export function useLocalStorage<T>(
   const setValue = useCallback(
     (value: T | ((prev: T) => T)) => {
       if (typeof window === 'undefined') {
-        console.warn(
-          `Tried setting localStorage key "${key}" on server side`
-        );
+        console.warn(`Tried setting localStorage key "${key}" on server side`);
         return;
       }
 
       try {
-        const valueToStore =
-          value instanceof Function ? value(storedValue) : value;
+        const valueToStore = value instanceof Function ? value(storedValue) : value;
         setStoredValue(valueToStore);
         window.localStorage.setItem(key, JSON.stringify(valueToStore));
         window.dispatchEvent(new Event('local-storage'));

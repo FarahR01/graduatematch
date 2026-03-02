@@ -34,8 +34,7 @@ export const APPLICATION_STATUS = {
   REJECTED: 'rejected',
 } as const;
 
-export type ApplicationStatus =
-  (typeof APPLICATION_STATUS)[keyof typeof APPLICATION_STATUS];
+export type ApplicationStatus = (typeof APPLICATION_STATUS)[keyof typeof APPLICATION_STATUS];
 
 export const APPLICATION_STATUS_LABELS: Record<ApplicationStatus, string> = {
   [APPLICATION_STATUS.APPLIED]: 'Applied',

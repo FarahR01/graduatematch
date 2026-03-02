@@ -14,9 +14,7 @@ interface GetJobsParams {
 /**
  * Fetch paginated job listings
  */
-export async function getJobs(
-  params: GetJobsParams = {}
-): Promise<PaginatedResponse<Job>> {
+export async function getJobs(params: GetJobsParams = {}): Promise<PaginatedResponse<Job>> {
   const searchParams = new URLSearchParams();
 
   if (params.page) searchParams.set('page', params.page.toString());

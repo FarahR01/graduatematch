@@ -10,9 +10,7 @@ import { BaseRepository } from '../../../common/repositories/base.repository';
  */
 @Injectable()
 export class GraduateRepository extends BaseRepository<Graduate> {
-  constructor(
-    @InjectRepository(Graduate) private graduateRepository: Repository<Graduate>,
-  ) {
+  constructor(@InjectRepository(Graduate) private graduateRepository: Repository<Graduate>) {
     super(graduateRepository);
   }
 
@@ -40,8 +38,6 @@ export class GraduateRepository extends BaseRepository<Graduate> {
    * Count graduates by experience level
    */
   async countByExperience(minYears: number): Promise<number> {
-    return this.createQueryBuilder()
-      .where('experienceYears >= :minYears', { minYears })
-      .getCount();
+    return this.createQueryBuilder().where('experienceYears >= :minYears', { minYears }).getCount();
   }
 }

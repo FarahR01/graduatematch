@@ -6,9 +6,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 const dataSourceConfig: DataSourceOptions = {
   type: 'postgres',
   url: process.env.DATABASE_URL,
-  entities: [
-    isProduction ? 'dist/modules/**/*.entity.js' : 'src/modules/**/*.entity.ts',
-  ],
+  entities: [isProduction ? 'dist/modules/**/*.entity.js' : 'src/modules/**/*.entity.ts'],
   migrations: [isProduction ? 'dist/database/migrations/*.js' : 'src/database/migrations/*.ts'],
   synchronize: false,
   logging: !isProduction,

@@ -12,7 +12,7 @@ import { BaseRepository } from '../../../common/repositories/base.repository';
 export class MatchScoreRepository extends BaseRepository<MatchScore> {
   constructor(
     @InjectRepository(MatchScore)
-    private matchScoreRepository: Repository<MatchScore>,
+    private matchScoreRepository: Repository<MatchScore>
   ) {
     super(matchScoreRepository);
   }

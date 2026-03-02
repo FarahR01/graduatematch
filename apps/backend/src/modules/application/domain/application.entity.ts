@@ -1,11 +1,4 @@
-import {
-  Column,
-  Entity,
-  ManyToOne,
-  JoinColumn,
-  Index,
-  Unique,
-} from 'typeorm';
+import { Column, Entity, ManyToOne, JoinColumn, Index, Unique } from 'typeorm';
 import { AppBaseEntity } from '../../../common/entities/base.entity';
 import { Job } from '../../job/domain/job.entity';
 import { Graduate } from '../../graduate/domain/graduate.entity';

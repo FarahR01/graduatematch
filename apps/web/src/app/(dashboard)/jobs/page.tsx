@@ -56,9 +56,7 @@ export default function JobsPage() {
                 >
                   Junior Software Engineer
                 </Link>
-                <p className="text-sm text-muted-foreground">
-                  Tech Company Inc. • London, UK
-                </p>
+                <p className="text-sm text-muted-foreground">Tech Company Inc. • London, UK</p>
               </div>
               <span className="inline-flex items-center rounded-full bg-green-100 px-2.5 py-1 text-sm font-medium text-green-800">
                 85% Match
@@ -66,9 +64,8 @@ export default function JobsPage() {
             </div>
 
             <p className="mt-2 text-sm text-muted-foreground line-clamp-2">
-              We&apos;re looking for a junior software engineer to join our
-              growing team. You&apos;ll work on exciting projects using modern
-              technologies...
+              We&apos;re looking for a junior software engineer to join our growing team.
+              You&apos;ll work on exciting projects using modern technologies...
             </p>
 
             <div className="mt-4 flex flex-wrap gap-2">

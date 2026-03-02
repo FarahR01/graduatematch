@@ -23,7 +23,7 @@ export class CompanyController {
   @Put(':id')
   async updateProfile(
     @Param('id') id: string,
-    @Body() body: Partial<Company>,
+    @Body() body: Partial<Company>
   ): Promise<Company | null> {
     if (!id) throw new BadRequestException('Company ID is required');
     return this.companyService.updateProfile(id, body);

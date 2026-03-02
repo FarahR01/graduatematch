@@ -63,7 +63,7 @@ export const calculateMatchPercentage = (
   userSkills: string[]
 ): number => {
   if (requiredSkills.length === 0) return 100;
-  const matched = requiredSkills.filter(skill => userSkills.includes(skill)).length;
+  const matched = requiredSkills.filter((skill) => userSkills.includes(skill)).length;
   return Math.round((matched / requiredSkills.length) * 100);
 };
 

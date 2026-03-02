@@ -35,7 +35,7 @@ export class ApplicationController {
   @Put(':id/status')
   async updateStatus(
     @Param('id') id: string,
-    @Body() body: { status: string },
+    @Body() body: { status: string }
   ): Promise<Application | null> {
     if (!id) throw new BadRequestException('Application ID is required');
     return this.applicationService.updateStatus(id, body.status);

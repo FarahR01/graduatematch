@@ -1,8 +1,5 @@
 import { cn } from '@/lib/utils';
-import {
-  APPLICATION_STATUS_LABELS,
-  type ApplicationStatus,
-} from '@/lib/constants';
+import { APPLICATION_STATUS_LABELS, type ApplicationStatus } from '@/lib/constants';
 
 interface ApplicationStatusTrackerProps {
   /**
@@ -27,12 +24,7 @@ interface ApplicationStatusTrackerProps {
   className?: string;
 }
 
-const statusOrder: ApplicationStatus[] = [
-  'applied',
-  'reviewed',
-  'interview',
-  'offered',
-];
+const statusOrder: ApplicationStatus[] = ['applied', 'reviewed', 'interview', 'offered'];
 
 /**
  * Visual tracker showing application progress through stages
@@ -78,9 +70,7 @@ export function ApplicationStatusTracker({
     <div
       className={cn(
         'flex',
-        orientation === 'horizontal'
-          ? 'flex-row items-center'
-          : 'flex-col items-start',
+        orientation === 'horizontal' ? 'flex-row items-center' : 'flex-col items-start',
         className
       )}
     >
@@ -93,9 +83,7 @@ export function ApplicationStatusTracker({
             key={stepStatus}
             className={cn(
               'flex',
-              orientation === 'horizontal'
-                ? 'flex-col items-center'
-                : 'flex-row items-start'
+              orientation === 'horizontal' ? 'flex-col items-center' : 'flex-row items-start'
             )}
           >
             {/* Step indicator */}
@@ -104,22 +92,14 @@ export function ApplicationStatusTracker({
                 className={cn(
                   'flex items-center justify-center rounded-full font-medium',
                   sizeClasses[size].circle,
-                  stepState === 'complete' &&
-                    'bg-green-500 text-white',
+                  stepState === 'complete' && 'bg-green-500 text-white',
                   stepState === 'current' &&
-                    (isRejected
-                      ? 'bg-red-500 text-white'
-                      : 'bg-blue-500 text-white'),
-                  stepState === 'pending' &&
-                    'bg-slate-200 text-slate-500'
+                    (isRejected ? 'bg-red-500 text-white' : 'bg-blue-500 text-white'),
+                  stepState === 'pending' && 'bg-slate-200 text-slate-500'
                 )}
               >
                 {stepState === 'complete' ? (
-                  <svg
-                    className="h-4 w-4"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
+                  <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
                     <path
                       fillRule="evenodd"
                       d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -135,9 +115,7 @@ export function ApplicationStatusTracker({
               {!isLast && (
                 <div
                   className={cn(
-                    orientation === 'horizontal'
-                      ? 'w-12 mx-2'
-                      : 'h-8 my-2 ml-4',
+                    orientation === 'horizontal' ? 'w-12 mx-2' : 'h-8 my-2 ml-4',
                     sizeClasses[size].line,
                     stepState === 'complete' || stepState === 'current'
                       ? 'bg-green-500'
@@ -155,18 +133,11 @@ export function ApplicationStatusTracker({
                 sizeClasses[size].text
               )}
             >
-              <p
-                className={cn(
-                  'font-medium',
-                  stepState === 'pending' && 'text-slate-400'
-                )}
-              >
+              <p className={cn('font-medium', stepState === 'pending' && 'text-slate-400')}>
                 {APPLICATION_STATUS_LABELS[stepStatus]}
               </p>
               {timestamps?.[stepStatus] && (
-                <p className="text-xs text-slate-500">
-                  {formatTimestamp(timestamps[stepStatus]!)}
-                </p>
+                <p className="text-xs text-slate-500">{formatTimestamp(timestamps[stepStatus]!)}</p>
               )}
             </div>
           </div>

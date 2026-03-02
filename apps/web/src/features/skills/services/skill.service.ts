@@ -11,9 +11,7 @@ export async function getSkillGaps(): Promise<SkillGap[]> {
 /**
  * Get learning resources for a specific skill
  */
-export async function getSkillResources(
-  skillId: string
-): Promise<LearningResource[]> {
+export async function getSkillResources(skillId: string): Promise<LearningResource[]> {
   return api.get<LearningResource[]>(`/skills/${skillId}/resources`);
 }
 

@@ -31,12 +31,8 @@ export default function ProfilePage() {
             <div className="flex flex-col items-center text-center">
               <div className="h-24 w-24 rounded-full bg-muted" />
               <h2 className="mt-4 text-xl font-semibold">John Doe</h2>
-              <p className="text-sm text-muted-foreground">
-                Computer Science, 2025
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Looking for: Backend, Full-Stack
-              </p>
+              <p className="text-sm text-muted-foreground">Computer Science, 2025</p>
+              <p className="text-sm text-muted-foreground">Looking for: Backend, Full-Stack</p>
             </div>
 
             <div className="mt-6 space-y-3 border-t pt-4">
@@ -62,9 +58,7 @@ export default function ProfilePage() {
           <div className="rounded-lg border bg-card p-6">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-semibold">Technical Skills</h3>
-              <button className="text-sm text-primary hover:underline">
-                + Add Skill
-              </button>
+              <button className="text-sm text-primary hover:underline">+ Add Skill</button>
             </div>
 
             <div className="mt-4 flex flex-wrap gap-2">
@@ -116,28 +110,19 @@ export default function ProfilePage() {
             <div className="mt-4 space-y-3">
               <div className="flex items-center gap-3">
                 <span className="text-muted-foreground">GitHub</span>
-                <a
-                  href="https://github.com/johndoe"
-                  className="text-primary hover:underline"
-                >
+                <a href="https://github.com/johndoe" className="text-primary hover:underline">
                   github.com/johndoe
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-muted-foreground">LinkedIn</span>
-                <a
-                  href="https://linkedin.com/in/johndoe"
-                  className="text-primary hover:underline"
-                >
+                <a href="https://linkedin.com/in/johndoe" className="text-primary hover:underline">
                   linkedin.com/in/johndoe
                 </a>
               </div>
               <div className="flex items-center gap-3">
                 <span className="text-muted-foreground">Portfolio</span>
-                <a
-                  href="https://johndoe.dev"
-                  className="text-primary hover:underline"
-                >
+                <a href="https://johndoe.dev" className="text-primary hover:underline">
                   johndoe.dev
                 </a>
               </div>

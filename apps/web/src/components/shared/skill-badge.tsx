@@ -79,10 +79,7 @@ export function SkillBadge({
       {/* Verified indicator */}
       {isVerified && (
         <svg
-          className={cn(
-            'text-green-500',
-            size === 'sm' ? 'h-3 w-3' : 'h-3.5 w-3.5'
-          )}
+          className={cn('text-green-500', size === 'sm' ? 'h-3 w-3' : 'h-3.5 w-3.5')}
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -98,11 +95,7 @@ export function SkillBadge({
       <span>{name}</span>
 
       {/* Level indicator */}
-      {level && (
-        <span className="text-opacity-60 text-xs">
-          ({SKILL_LEVEL_LABELS[level]})
-        </span>
-      )}
+      {level && <span className="text-opacity-60 text-xs">({SKILL_LEVEL_LABELS[level]})</span>}
 
       {/* Remove button */}
       {onRemove && (

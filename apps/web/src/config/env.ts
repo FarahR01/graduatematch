@@ -13,25 +13,16 @@ const getEnvVar = (key: string, defaultValue?: string): string => {
 
 export const env = {
   // API Configuration
-  NEXT_PUBLIC_API_URL: getEnvVar(
-    'NEXT_PUBLIC_API_URL',
-    'http://localhost:3001'
-  ),
+  NEXT_PUBLIC_API_URL: getEnvVar('NEXT_PUBLIC_API_URL', 'http://localhost:3001'),
 
   // App Configuration
-  NEXT_PUBLIC_APP_URL: getEnvVar(
-    'NEXT_PUBLIC_APP_URL',
-    'http://localhost:3000'
-  ),
+  NEXT_PUBLIC_APP_URL: getEnvVar('NEXT_PUBLIC_APP_URL', 'http://localhost:3000'),
 
   // Node Environment
   NODE_ENV: getEnvVar('NODE_ENV', 'development'),
 
   // Feature Flags
-  NEXT_PUBLIC_ENABLE_ANALYTICS: getEnvVar(
-    'NEXT_PUBLIC_ENABLE_ANALYTICS',
-    'false'
-  ) === 'true',
+  NEXT_PUBLIC_ENABLE_ANALYTICS: getEnvVar('NEXT_PUBLIC_ENABLE_ANALYTICS', 'false') === 'true',
 } as const;
 
 // Type for environment variables

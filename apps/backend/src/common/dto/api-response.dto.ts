@@ -17,11 +17,7 @@ export class ApiResponseDto<T> {
   @ApiPropertyOptional({ example: '2026-03-01T12:00:00.000Z' })
   timestamp: string;
 
-  constructor(
-    data?: T,
-    message?: string,
-    success: boolean = true,
-  ) {
+  constructor(data?: T, message?: string, success: boolean = true) {
     this.success = success;
     this.data = data;
     this.message = message;

@@ -11,7 +11,7 @@ import { BaseRepository } from '../../../common/repositories/base.repository';
 export class ApplicationRepository extends BaseRepository<Application> {
   constructor(
     @InjectRepository(Application)
-    private applicationRepository: Repository<Application>,
+    private applicationRepository: Repository<Application>
   ) {
     super(applicationRepository);
   }

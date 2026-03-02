@@ -28,10 +28,7 @@ export class CompanyService {
   /**
    * Update company profile
    */
-  async updateProfile(
-    companyId: string,
-    data: Partial<Company>,
-  ): Promise<Company | null> {
+  async updateProfile(companyId: string, data: Partial<Company>): Promise<Company | null> {
     if (!companyId) throw new BadRequestException('Company ID is required');
     return this.companyRepository.update(companyId, data);
   }

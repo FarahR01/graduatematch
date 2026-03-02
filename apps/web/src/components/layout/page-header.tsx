@@ -23,12 +23,7 @@ interface PageHeaderProps {
  * Consistent page header component
  * Use at the top of each page for title and actions
  */
-export function PageHeader({
-  title,
-  description,
-  actions,
-  className,
-}: PageHeaderProps) {
+export function PageHeader({ title, description, actions, className }: PageHeaderProps) {
   return (
     <div
       className={cn(
@@ -37,12 +32,8 @@ export function PageHeader({
       )}
     >
       <div>
-        <h1 className="text-2xl font-bold tracking-tight md:text-3xl">
-          {title}
-        </h1>
-        {description && (
-          <p className="mt-1 text-muted-foreground">{description}</p>
-        )}
+        <h1 className="text-2xl font-bold tracking-tight md:text-3xl">{title}</h1>
+        {description && <p className="mt-1 text-muted-foreground">{description}</p>}
       </div>
       {actions && <div className="flex items-center gap-2">{actions}</div>}
     </div>

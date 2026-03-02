@@ -21,10 +21,7 @@ export class MatchScoreService {
   /**
    * Get top jobs for a graduate
    */
-  async getTopJobsForGraduate(
-    graduateId: string,
-    limit: number = 10,
-  ): Promise<MatchScore[]> {
+  async getTopJobsForGraduate(graduateId: string, limit: number = 10): Promise<MatchScore[]> {
     if (!graduateId) throw new BadRequestException('Graduate ID is required');
     return this.matchScoreRepository.findTopJobsForGraduate(graduateId, limit);
   }
@@ -49,10 +46,7 @@ export class MatchScoreService {
   /**
    * Update match score
    */
-  async updateMatchScore(
-    scoreId: string,
-    data: Partial<MatchScore>,
-  ): Promise<MatchScore | null> {
+  async updateMatchScore(scoreId: string, data: Partial<MatchScore>): Promise<MatchScore | null> {
     if (!scoreId) throw new BadRequestException('Score ID is required');
     return this.matchScoreRepository.update(scoreId, data);
   }

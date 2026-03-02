@@ -37,17 +37,14 @@ async function bootstrap() {
       transformOptions: {
         enableImplicitConversion: true,
       },
-    }),
+    })
   );
 
   // Global exception filters
   app.useGlobalFilters(new AllExceptionsFilter(), new HttpExceptionFilter());
 
   // Global interceptors
-  app.useGlobalInterceptors(
-    new LoggingInterceptor(),
-    new TimeoutInterceptor(30000),
-  );
+  app.useGlobalInterceptors(new LoggingInterceptor(), new TimeoutInterceptor(30000));
 
   // Swagger documentation
   const config = new DocumentBuilder()
@@ -68,7 +65,7 @@ async function bootstrap() {
         bearerFormat: 'JWT',
         description: 'Enter JWT token',
       },
-      'JWT',
+      'JWT'
     )
     .build();
 

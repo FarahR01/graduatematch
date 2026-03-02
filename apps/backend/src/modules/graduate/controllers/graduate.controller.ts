@@ -18,16 +18,14 @@ export class GraduateController {
   @Put(':id')
   async updateProfile(
     @Param('id') id: string,
-    @Body() body: Partial<Graduate>,
+    @Body() body: Partial<Graduate>
   ): Promise<Graduate | null> {
     if (!id) throw new BadRequestException('Graduate ID is required');
     return this.graduateService.updateProfile(id, body);
   }
 
   @Get('experience/filter')
-  async getExperienced(
-    @Param('minYears') minYears: number,
-  ): Promise<Graduate[]> {
+  async getExperienced(@Param('minYears') minYears: number): Promise<Graduate[]> {
     return this.graduateService.findExperienced(minYears);
   }
 }

@@ -51,5 +51,5 @@ export const ApiPagination = () =>
       enum: ['asc', 'desc'],
       description: 'Sort order',
       example: 'desc',
-    }),
+    })
   );

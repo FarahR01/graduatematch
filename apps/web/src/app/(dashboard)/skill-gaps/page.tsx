@@ -28,21 +28,15 @@ export default function SkillGapsPage() {
         <div className="mt-4 flex gap-4">
           <div className="flex-1 rounded-lg bg-red-50 p-4">
             <p className="text-sm font-medium text-red-800">Critical (3)</p>
-            <p className="text-xs text-red-600">
-              Required by 80%+ of your target jobs
-            </p>
+            <p className="text-xs text-red-600">Required by 80%+ of your target jobs</p>
           </div>
           <div className="flex-1 rounded-lg bg-yellow-50 p-4">
             <p className="text-sm font-medium text-yellow-800">Important (5)</p>
-            <p className="text-xs text-yellow-600">
-              Required by 50%+ of your target jobs
-            </p>
+            <p className="text-xs text-yellow-600">Required by 50%+ of your target jobs</p>
           </div>
           <div className="flex-1 rounded-lg bg-slate-50 p-4">
             <p className="text-sm font-medium text-slate-800">Nice to Have (4)</p>
-            <p className="text-xs text-slate-600">
-              Would improve your match scores
-            </p>
+            <p className="text-xs text-slate-600">Would improve your match scores</p>
           </div>
         </div>
       </div>
@@ -73,10 +67,7 @@ export default function SkillGapsPage() {
             color: 'yellow',
           },
         ].map((skill) => (
-          <div
-            key={skill.name}
-            className="rounded-lg border bg-card p-6"
-          >
+          <div key={skill.name} className="rounded-lg border bg-card p-6">
             <div className="flex items-start justify-between">
               <div>
                 <div className="flex items-center gap-2">

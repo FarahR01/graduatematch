@@ -46,9 +46,7 @@ class ApiClient {
     const { method = 'GET', body, headers = {}, cache, next } = options;
 
     const token = await this.getAuthToken();
-    const authHeaders: HeadersInit = token
-      ? { Authorization: `Bearer ${token}` }
-      : {};
+    const authHeaders: HeadersInit = token ? { Authorization: `Bearer ${token}` } : {};
 
     const config: RequestInit = {
       method,
@@ -107,10 +105,7 @@ class ApiClient {
     }
   }
 
-  async get<T>(
-    endpoint: string,
-    options?: Omit<RequestOptions, 'method' | 'body'>
-  ): Promise<T> {
+  async get<T>(endpoint: string, options?: Omit<RequestOptions, 'method' | 'body'>): Promise<T> {
     const response = await this.request<T>(endpoint, {
       ...options,
       method: 'GET',
@@ -157,10 +152,7 @@ class ApiClient {
     return response.data;
   }
 
-  async delete<T>(
-    endpoint: string,
-    options?: Omit<RequestOptions, 'method' | 'body'>
-  ): Promise<T> {
+  async delete<T>(endpoint: string, options?: Omit<RequestOptions, 'method' | 'body'>): Promise<T> {
     const response = await this.request<T>(endpoint, {
       ...options,
       method: 'DELETE',

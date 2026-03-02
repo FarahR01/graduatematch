@@ -1,11 +1,4 @@
-import {
-  Column,
-  Entity,
-  ManyToOne,
-  JoinColumn,
-  OneToMany,
-  Index,
-} from 'typeorm';
+import { Column, Entity, ManyToOne, JoinColumn, OneToMany, Index } from 'typeorm';
 import { AppBaseEntity } from '../../../common/entities/base.entity';
 import { Company } from '../../company/domain/company.entity';
 import { Application } from '../../application/domain/application.entity';

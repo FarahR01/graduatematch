@@ -16,9 +16,7 @@ export function Footer() {
             <Link href="/" className="text-xl font-bold">
               {siteConfig.name}
             </Link>
-            <p className="mt-2 text-sm text-muted-foreground">
-              {siteConfig.description}
-            </p>
+            <p className="mt-2 text-sm text-muted-foreground">{siteConfig.description}</p>
           </div>
 
           {/* For Graduates */}
@@ -26,10 +24,7 @@ export function Footer() {
             <h3 className="text-sm font-semibold">For Graduates</h3>
             <ul className="mt-4 space-y-2">
               <li>
-                <Link
-                  href="/jobs"
-                  className="text-sm text-muted-foreground hover:text-foreground"
-                >
+                <Link href="/jobs" className="text-sm text-muted-foreground hover:text-foreground">
                   Browse Jobs
                 </Link>
               </li>
@@ -88,18 +83,12 @@ export function Footer() {
             <h3 className="text-sm font-semibold">Resources</h3>
             <ul className="mt-4 space-y-2">
               <li>
-                <Link
-                  href="/blog"
-                  className="text-sm text-muted-foreground hover:text-foreground"
-                >
+                <Link href="/blog" className="text-sm text-muted-foreground hover:text-foreground">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link
-                  href="/help"
-                  className="text-sm text-muted-foreground hover:text-foreground"
-                >
+                <Link href="/help" className="text-sm text-muted-foreground hover:text-foreground">
                   Help Center
                 </Link>
               </li>
@@ -121,16 +110,10 @@ export function Footer() {
             &copy; {currentYear} {siteConfig.name}. All rights reserved.
           </p>
           <div className="flex gap-4">
-            <Link
-              href="/privacy"
-              className="text-sm text-muted-foreground hover:text-foreground"
-            >
+            <Link href="/privacy" className="text-sm text-muted-foreground hover:text-foreground">
               Privacy Policy
             </Link>
-            <Link
-              href="/terms"
-              className="text-sm text-muted-foreground hover:text-foreground"
-            >
+            <Link href="/terms" className="text-sm text-muted-foreground hover:text-foreground">
               Terms of Service
             </Link>
           </div>

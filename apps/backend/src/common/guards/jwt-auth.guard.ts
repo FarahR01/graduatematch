@@ -1,16 +1,11 @@
-import {
-  Injectable,
-  CanActivate,
-  ExecutionContext,
-  UnauthorizedException,
-} from '@nestjs/common';
+import { Injectable, CanActivate, ExecutionContext, UnauthorizedException } from '@nestjs/common';
 import { Reflector } from '@nestjs/core';
 import { IS_PUBLIC_KEY } from '../decorators/api.decorators';
 
 /**
  * JwtAuthGuard - Validates JWT tokens on protected routes
  * Use @Public() decorator to skip authentication for specific routes
- * 
+ *
  * Note: This is a placeholder. Real implementation should use
  * @nestjs/passport with JwtStrategy for proper JWT validation.
  */

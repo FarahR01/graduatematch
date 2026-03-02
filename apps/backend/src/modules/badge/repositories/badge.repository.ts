@@ -9,9 +9,7 @@ import { BaseRepository } from '../../../common/repositories/base.repository';
  */
 @Injectable()
 export class BadgeRepository extends BaseRepository<Badge> {
-  constructor(
-    @InjectRepository(Badge) private badgeRepository: Repository<Badge>,
-  ) {
+  constructor(@InjectRepository(Badge) private badgeRepository: Repository<Badge>) {
     super(badgeRepository);
   }
 

@@ -28,10 +28,7 @@ export class GraduateService {
   /**
    * Update graduate profile
    */
-  async updateProfile(
-    graduateId: string,
-    data: Partial<Graduate>,
-  ): Promise<Graduate | null> {
+  async updateProfile(graduateId: string, data: Partial<Graduate>): Promise<Graduate | null> {
     if (!graduateId) throw new BadRequestException('Graduate ID is required');
     return this.graduateRepository.update(graduateId, data);
   }

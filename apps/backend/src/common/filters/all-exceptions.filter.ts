@@ -22,19 +22,15 @@ export class AllExceptionsFilter implements ExceptionFilter {
     const request = ctx.getRequest<Request>();
 
     const status =
-      exception instanceof HttpException
-        ? exception.getStatus()
-        : HttpStatus.INTERNAL_SERVER_ERROR;
+      exception instanceof HttpException ? exception.getStatus() : HttpStatus.INTERNAL_SERVER_ERROR;
 
     const message =
-      exception instanceof HttpException
-        ? exception.message
-        : 'Internal server error';
+      exception instanceof HttpException ? exception.message : 'Internal server error';
 
     // Always log the full error server-side
     this.logger.error(
       `${request.method} ${request.url} - ${status}: ${message}`,
-      exception instanceof Error ? exception.stack : String(exception),
+      exception instanceof Error ? exception.stack : String(exception)
     );
 
     const errorResponse = {
@@ -42,9 +38,7 @@ export class AllExceptionsFilter implements ExceptionFilter {
       statusCode: status,
       error: HttpStatus[status] || 'Error',
       message:
-        process.env.NODE_ENV === 'production' && status >= 500
-          ? 'Internal server error'
-          : message,
+        process.env.NODE_ENV === 'production' && status >= 500 ? 'Internal server error' : message,
       timestamp: new Date().toISOString(),
       path: request.url,
     };

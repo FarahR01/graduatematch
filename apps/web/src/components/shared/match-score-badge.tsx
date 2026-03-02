@@ -69,9 +69,7 @@ export function MatchScoreBadge({
       )}
     >
       <span className="font-semibold">{score}%</span>
-      {showLabel && (
-        <span className="text-opacity-80">{getScoreLabel(score)}</span>
-      )}
+      {showLabel && <span className="text-opacity-80">{getScoreLabel(score)}</span>}
     </span>
   );
 }

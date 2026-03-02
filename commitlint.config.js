@@ -26,6 +26,8 @@ module.exports = {
       'matching',  // Job matching algorithm
       'ui',        // Frontend UI components
       'config',    // Configuration changes
+      'app',       // Application-wide changes
+      'workflows', // CI/CD and workflow changes
       'deps',      // Dependencies
       'release'    // Release-related changes
     ]],

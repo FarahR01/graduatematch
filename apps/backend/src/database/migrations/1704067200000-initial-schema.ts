@@ -8,14 +8,10 @@ export class InitialSchema1704067200000 implements MigrationInterface {
     await queryRunner.query('CREATE EXTENSION IF NOT EXISTS "pgcrypto"');
 
     // Create enums
+    await queryRunner.query("CREATE TYPE \"user_role\" AS ENUM('graduate', 'company', 'admin')");
+    await queryRunner.query("CREATE TYPE \"job_status\" AS ENUM('draft', 'published', 'closed')");
     await queryRunner.query(
-      "CREATE TYPE \"user_role\" AS ENUM('graduate', 'company', 'admin')",
-    );
-    await queryRunner.query(
-      "CREATE TYPE \"job_status\" AS ENUM('draft', 'published', 'closed')",
-    );
-    await queryRunner.query(
-      "CREATE TYPE \"application_status\" AS ENUM('submitted', 'reviewing', 'interview', 'accepted', 'rejected')",
+      "CREATE TYPE \"application_status\" AS ENUM('submitted', 'reviewing', 'interview', 'accepted', 'rejected')"
     );
 
     // Users table
@@ -87,9 +83,7 @@ export class InitialSchema1704067200000 implements MigrationInterface {
         FOREIGN KEY ("userId") REFERENCES "users"("id") ON DELETE CASCADE
       )
     `);
-    await queryRunner.query(
-      'CREATE INDEX "idx_companies_userId" ON "companies"("userId")',
-    );
+    await queryRunner.query('CREATE INDEX "idx_companies_userId" ON "companies"("userId")');
 
     // Jobs table
     await queryRunner.query(`
@@ -107,7 +101,7 @@ export class InitialSchema1704067200000 implements MigrationInterface {
       )
     `);
     await queryRunner.query(
-      'CREATE INDEX "idx_jobs_companyId_status" ON "jobs"("companyId", "status")',
+      'CREATE INDEX "idx_jobs_companyId_status" ON "jobs"("companyId", "status")'
     );
     await queryRunner.query('CREATE INDEX "idx_jobs_createdAt" ON "jobs"("createdAt" DESC)');
     await queryRunner.query('CREATE INDEX "idx_jobs_status" ON "jobs"("status")');
@@ -129,10 +123,14 @@ export class InitialSchema1704067200000 implements MigrationInterface {
       )
     `);
     await queryRunner.query(
-      'CREATE INDEX "idx_applications_jobId_status" ON "applications"("jobId", "status")',
+      'CREATE INDEX "idx_applications_jobId_status" ON "applications"("jobId", "status")'
     );
-    await queryRunner.query('CREATE INDEX "idx_applications_graduateId" ON "applications"("graduateId")');
-    await queryRunner.query('CREATE INDEX "idx_applications_appliedAt" ON "applications"("appliedAt")');
+    await queryRunner.query(
+      'CREATE INDEX "idx_applications_graduateId" ON "applications"("graduateId")'
+    );
+    await queryRunner.query(
+      'CREATE INDEX "idx_applications_appliedAt" ON "applications"("appliedAt")'
+    );
 
     // Graduate Skills table
     await queryRunner.query(`
@@ -146,10 +144,10 @@ export class InitialSchema1704067200000 implements MigrationInterface {
       )
     `);
     await queryRunner.query(
-      'CREATE INDEX "idx_graduate_skills_graduate_id" ON "graduate_skills"("graduate_id")',
+      'CREATE INDEX "idx_graduate_skills_graduate_id" ON "graduate_skills"("graduate_id")'
     );
     await queryRunner.query(
-      'CREATE INDEX "idx_graduate_skills_skill_id" ON "graduate_skills"("skill_id")',
+      'CREATE INDEX "idx_graduate_skills_skill_id" ON "graduate_skills"("skill_id")'
     );
 
     // Job Skills table
@@ -178,10 +176,10 @@ export class InitialSchema1704067200000 implements MigrationInterface {
       )
     `);
     await queryRunner.query(
-      'CREATE INDEX "idx_graduate_badges_graduate_id" ON "graduate_badges"("graduate_id")',
+      'CREATE INDEX "idx_graduate_badges_graduate_id" ON "graduate_badges"("graduate_id")'
     );
     await queryRunner.query(
-      'CREATE INDEX "idx_graduate_badges_badge_id" ON "graduate_badges"("badge_id")',
+      'CREATE INDEX "idx_graduate_badges_badge_id" ON "graduate_badges"("badge_id")'
     );
 
     // Match Scores table
@@ -201,13 +199,13 @@ export class InitialSchema1704067200000 implements MigrationInterface {
       )
     `);
     await queryRunner.query(
-      'CREATE INDEX "idx_match_scores_jobId_score" ON "match_scores"("jobId", "score" DESC)',
+      'CREATE INDEX "idx_match_scores_jobId_score" ON "match_scores"("jobId", "score" DESC)'
     );
     await queryRunner.query(
-      'CREATE INDEX "idx_match_scores_graduateId" ON "match_scores"("graduateId")',
+      'CREATE INDEX "idx_match_scores_graduateId" ON "match_scores"("graduateId")'
     );
     await queryRunner.query(
-      'CREATE INDEX "idx_match_scores_calculatedAt" ON "match_scores"("calculatedAt")',
+      'CREATE INDEX "idx_match_scores_calculatedAt" ON "match_scores"("calculatedAt")'
     );
   }
 

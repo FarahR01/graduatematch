@@ -11,43 +11,20 @@ interface SkeletonProps extends React.HTMLAttributes<HTMLDivElement> {
  * Skeleton loading placeholder
  * Use for content loading states
  */
-export function Skeleton({
-  className,
-  animate = true,
-  ...props
-}: SkeletonProps) {
+export function Skeleton({ className, animate = true, ...props }: SkeletonProps) {
   return (
-    <div
-      className={cn(
-        'rounded-md bg-muted',
-        animate && 'animate-pulse',
-        className
-      )}
-      {...props}
-    />
+    <div className={cn('rounded-md bg-muted', animate && 'animate-pulse', className)} {...props} />
   );
 }
 
 /**
  * Skeleton for text content
  */
-export function SkeletonText({
-  lines = 3,
-  className,
-}: {
-  lines?: number;
-  className?: string;
-}) {
+export function SkeletonText({ lines = 3, className }: { lines?: number; className?: string }) {
   return (
     <div className={cn('space-y-2', className)}>
       {Array.from({ length: lines }).map((_, i) => (
-        <Skeleton
-          key={i}
-          className={cn(
-            'h-4',
-            i === lines - 1 ? 'w-3/4' : 'w-full'
-          )}
-        />
+        <Skeleton key={i} className={cn('h-4', i === lines - 1 ? 'w-3/4' : 'w-full')} />
       ))}
     </div>
   );
@@ -69,11 +46,7 @@ export function SkeletonAvatar({
     lg: 'h-12 w-12',
   };
 
-  return (
-    <Skeleton
-      className={cn('rounded-full', sizeClasses[size], className)}
-    />
-  );
+  return <Skeleton className={cn('rounded-full', sizeClasses[size], className)} />;
 }
 
 /**
@@ -81,12 +54,7 @@ export function SkeletonAvatar({
  */
 export function SkeletonCard({ className }: { className?: string }) {
   return (
-    <div
-      className={cn(
-        'rounded-lg border bg-card p-4 space-y-4',
-        className
-      )}
-    >
+    <div className={cn('rounded-lg border bg-card p-4 space-y-4', className)}>
       <div className="flex items-center space-x-4">
         <SkeletonAvatar />
         <div className="space-y-2 flex-1">

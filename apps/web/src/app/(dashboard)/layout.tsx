@@ -13,11 +13,7 @@ export const metadata: Metadata = {
  * Dashboard layout for authenticated graduate users
  * Includes sidebar navigation and main content area
  */
-export default function DashboardLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen">
       {/* Sidebar */}
@@ -27,9 +23,7 @@ export default function DashboardLayout({
       <main className="flex-1 pl-64 transition-all duration-300">
         {/* Top Bar */}
         <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-background px-6">
-          <div className="flex-1">
-            {/* Breadcrumb or search could go here */}
-          </div>
+          <div className="flex-1">{/* Breadcrumb or search could go here */}</div>
 
           {/* User Menu */}
           <div className="flex items-center gap-4">

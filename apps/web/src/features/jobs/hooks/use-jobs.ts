@@ -63,7 +63,15 @@ export function useJobs(options: UseJobsOptions = {}) {
     } finally {
       setIsLoading(false);
     }
-  }, [page, pageSize, debouncedSearch, filters.location, filters.remote, filters.experienceLevel, filters.skills]);
+  }, [
+    page,
+    pageSize,
+    debouncedSearch,
+    filters.location,
+    filters.remote,
+    filters.experienceLevel,
+    filters.skills,
+  ]);
 
   useEffect(() => {
     fetchJobs();
@@ -74,12 +82,9 @@ export function useJobs(options: UseJobsOptions = {}) {
     setPage(1);
   }, [debouncedSearch, filters.location, filters.remote, filters.experienceLevel, filters.skills]);
 
-  const updateFilter = useCallback(
-    <K extends keyof JobFilters>(key: K, value: JobFilters[K]) => {
-      setFilters((prev) => ({ ...prev, [key]: value }));
-    },
-    []
-  );
+  const updateFilter = useCallback(<K extends keyof JobFilters>(key: K, value: JobFilters[K]) => {
+    setFilters((prev) => ({ ...prev, [key]: value }));
+  }, []);
 
   const resetFilters = useCallback(() => {
     setFilters({

@@ -79,10 +79,7 @@ export function Sidebar({ className }: SidebarProps) {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className={cn(
-                'h-5 w-5 transition-transform',
-                sidebarCollapsed && 'rotate-180'
-              )}
+              className={cn('h-5 w-5 transition-transform', sidebarCollapsed && 'rotate-180')}
             >
               <path
                 strokeLinecap="round"

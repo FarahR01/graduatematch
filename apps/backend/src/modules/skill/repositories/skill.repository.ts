@@ -10,9 +10,7 @@ import { BaseRepository } from '../../../common/repositories/base.repository';
  */
 @Injectable()
 export class SkillRepository extends BaseRepository<Skill> {
-  constructor(
-    @InjectRepository(Skill) private skillRepository: Repository<Skill>,
-  ) {
+  constructor(@InjectRepository(Skill) private skillRepository: Repository<Skill>) {
     super(skillRepository);
   }
 

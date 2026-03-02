@@ -1,4 +1,13 @@
-import { Controller, Get, Post, Put, Delete, Param, Body, BadRequestException } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Put,
+  Delete,
+  Param,
+  Body,
+  BadRequestException,
+} from '@nestjs/common';
 import { UserService } from '../services/user.service';
 import { User, UserRole } from '../domain/user.entity';
 
@@ -28,7 +37,7 @@ export class UserController {
       email: string;
       passwordHash: string;
       role?: string;
-    },
+    }
   ): Promise<User> {
     const role = (body.role || 'graduate') as unknown as UserRole;
     return this.userService.createUser({ ...body, role });
@@ -37,7 +46,7 @@ export class UserController {
   @Put(':id/status')
   async toggleUserStatus(
     @Param('id') id: string,
-    @Body() body: { isActive: boolean },
+    @Body() body: { isActive: boolean }
   ): Promise<User | null> {
     if (!id) throw new BadRequestException('User ID is required');
     return this.userService.toggleUserStatus(id, body.isActive);

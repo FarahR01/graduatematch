@@ -17,7 +17,7 @@ export const CurrentUser = createParamDecorator(
 
     // If a specific property is requested, return that
     return data ? user[data] : user;
-  },
+  }
 );
 
 /**
@@ -29,5 +29,5 @@ export const CurrentUserId = createParamDecorator(
     const request = ctx.switchToHttp().getRequest();
     const user = request.user as User;
     return user?.id ?? null;
-  },
+  }
 );

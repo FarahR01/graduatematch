@@ -16,9 +16,7 @@ interface GetJobsParams {
  * Server action to fetch jobs
  * Uses server-side caching
  */
-export async function getJobsAction(
-  params: GetJobsParams = {}
-): Promise<PaginatedResponse<Job>> {
+export async function getJobsAction(params: GetJobsParams = {}): Promise<PaginatedResponse<Job>> {
   const searchParams = new URLSearchParams();
 
   if (params.page) searchParams.set('page', params.page.toString());
@@ -53,10 +51,10 @@ export async function applyToJobAction(
 ): Promise<{ success: boolean; error?: string }> {
   try {
     await api.post(`/applications`, { jobId });
-    
+
     // Revalidate the applications list
     revalidatePath('/applications');
-    
+
     return { success: true };
   } catch (error) {
     const err = error as { message: string };

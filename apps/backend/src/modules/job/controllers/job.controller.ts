@@ -1,4 +1,13 @@
-import { Controller, Get, Post, Put, Delete, Param, Body, BadRequestException } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Put,
+  Delete,
+  Param,
+  Body,
+  BadRequestException,
+} from '@nestjs/common';
 import { JobService } from '../services/job.service';
 import { Job } from '../domain/job.entity';
 
@@ -37,10 +46,7 @@ export class JobController {
   }
 
   @Put(':id')
-  async updateJob(
-    @Param('id') id: string,
-    @Body() body: Partial<Job>,
-  ): Promise<Job | null> {
+  async updateJob(@Param('id') id: string, @Body() body: Partial<Job>): Promise<Job | null> {
     if (!id) throw new BadRequestException('Job ID is required');
     return this.jobService.updateJob(id, body);
   }

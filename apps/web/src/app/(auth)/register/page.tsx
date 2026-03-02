@@ -20,9 +20,7 @@ export default function RegisterPage() {
         <Link href={ROUTES.HOME} className="mx-auto">
           <h1 className="text-2xl font-bold">{siteConfig.name}</h1>
         </Link>
-        <p className="text-sm text-muted-foreground">
-          Create an account to get matched with jobs
-        </p>
+        <p className="text-sm text-muted-foreground">Create an account to get matched with jobs</p>
       </div>
 
       {/* Registration Form Card */}
@@ -30,10 +28,7 @@ export default function RegisterPage() {
         {/* TODO: Add RegisterForm client component with multi-step wizard */}
         <form className="space-y-4">
           <div className="space-y-2">
-            <label
-              htmlFor="email"
-              className="text-sm font-medium leading-none"
-            >
+            <label htmlFor="email" className="text-sm font-medium leading-none">
               Email
             </label>
             <input
@@ -48,10 +43,7 @@ export default function RegisterPage() {
           </div>
 
           <div className="space-y-2">
-            <label
-              htmlFor="password"
-              className="text-sm font-medium leading-none"
-            >
+            <label htmlFor="password" className="text-sm font-medium leading-none">
               Password
             </label>
             <input
@@ -62,10 +54,7 @@ export default function RegisterPage() {
           </div>
 
           <div className="space-y-2">
-            <label
-              htmlFor="confirmPassword"
-              className="text-sm font-medium leading-none"
-            >
+            <label htmlFor="confirmPassword" className="text-sm font-medium leading-none">
               Confirm Password
             </label>
             <input
@@ -77,26 +66,14 @@ export default function RegisterPage() {
 
           {/* Role Selection */}
           <div className="space-y-2">
-            <label className="text-sm font-medium leading-none">
-              I am a...
-            </label>
+            <label className="text-sm font-medium leading-none">I am a...</label>
             <div className="grid grid-cols-2 gap-4">
               <label className="flex cursor-pointer items-center justify-center rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary">
-                <input
-                  type="radio"
-                  name="role"
-                  value="graduate"
-                  className="sr-only"
-                />
+                <input type="radio" name="role" value="graduate" className="sr-only" />
                 <span className="text-sm font-medium">Graduate</span>
               </label>
               <label className="flex cursor-pointer items-center justify-center rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground [&:has([data-state=checked])]:border-primary">
-                <input
-                  type="radio"
-                  name="role"
-                  value="company"
-                  className="sr-only"
-                />
+                <input type="radio" name="role" value="company" className="sr-only" />
                 <span className="text-sm font-medium">Company</span>
               </label>
             </div>

@@ -27,7 +27,7 @@ export function useMediaQuery(query: Breakpoint | string): boolean {
     }
 
     const media = window.matchMedia(mediaQuery);
-    
+
     // Set initial value
     setMatches(media.matches);
 

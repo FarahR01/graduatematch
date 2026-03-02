@@ -17,7 +17,7 @@ export class ApplicationService {
     if (!jobId || !graduateId) {
       throw new BadRequestException('Job ID and Graduate ID are required');
     }
-    
+
     const exists = await this.applicationRepository.findByJobAndGraduate(jobId, graduateId);
     if (exists) {
       throw new ConflictException('Application already submitted for this job');
@@ -45,10 +45,7 @@ export class ApplicationService {
   /**
    * Update application status
    */
-  async updateStatus(
-    applicationId: string,
-    status: string,
-  ): Promise<Application | null> {
+  async updateStatus(applicationId: string, status: string): Promise<Application | null> {
     if (!applicationId) throw new BadRequestException('Application ID is required');
     return this.applicationRepository.update(applicationId, { status } as Partial<Application>);
   }

@@ -1,0 +1,25 @@
+# <type>(<scope>): <short summary>
+#
+# <body>
+#
+# <footer>
+
+# TYPE: feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert
+# SCOPE: Options include:
+#   - auth (Authentication module)
+#   - matching (Job matching algorithm)  
+#   - api (Backend API changes)
+#   - ui (Frontend UI components)
+#   - db (Database changes)
+#   - config (Configuration changes)
+#   - deps (Dependencies updates)
+
+# EXAMPLES:
+# feat(auth): add JWT token refresh mechanism
+# fix(matching): resolve algorithm scoring edge case
+# docs(api): update endpoint documentation
+# chore(deps): upgrade TypeScript to 5.3.0
+# test(matching): add comprehensive algorithm tests
+
+# BREAKING CHANGE: Use footer for breaking changes
+# Closes: #123, #456 (Reference issues/PRs)

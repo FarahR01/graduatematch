@@ -14,4 +14,5 @@ import { JobController } from './controllers/job.controller';
   controllers: [JobController],
   exports: [JobService],
 })
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class JobModule {}

@@ -14,6 +14,7 @@ export default tseslint.config(
       '.turbo',
       'coverage',
       'jest-e2e.json',
+      'test/**/*',
     ],
   },
   eslint.configs.recommended,

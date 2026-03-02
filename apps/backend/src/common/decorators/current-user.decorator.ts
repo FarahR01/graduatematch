@@ -7,9 +7,9 @@ import { User } from '@/modules/user/domain/user.entity';
  * Must be used with JwtAuthGuard
  */
 export const CurrentUser = createParamDecorator(
-  (data: keyof User | undefined, ctx: ExecutionContext): User | unknown => {
-    const request = ctx.switchToHttp().getRequest();
-    const user = request.user as User;
+  (data: keyof User | undefined, ctx: ExecutionContext): any => {
+    const request = ctx.switchToHttp().getRequest<{ user?: User }>();
+    const user = request.user;
 
     if (!user) {
       return null;
@@ -26,8 +26,8 @@ export const CurrentUser = createParamDecorator(
  */
 export const CurrentUserId = createParamDecorator(
   (data: unknown, ctx: ExecutionContext): string | null => {
-    const request = ctx.switchToHttp().getRequest();
-    const user = request.user as User;
+    const request = ctx.switchToHttp().getRequest<{ user?: User }>();
+    const user = request.user;
     return user?.id ?? null;
   }
 );

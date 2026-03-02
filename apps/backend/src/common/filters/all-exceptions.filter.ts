@@ -29,7 +29,7 @@ export class AllExceptionsFilter implements ExceptionFilter {
 
     // Always log the full error server-side
     this.logger.error(
-      `${request.method} ${request.url} - ${status}: ${message}`,
+      `${request.method} ${request.url} - ${status.toString()}: ${message}`,
       exception instanceof Error ? exception.stack : String(exception)
     );
 

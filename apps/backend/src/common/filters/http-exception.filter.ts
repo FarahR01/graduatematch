@@ -36,11 +36,13 @@ export class HttpExceptionFilter implements ExceptionFilter {
     // Log error for server-side debugging
     if (status >= 500) {
       this.logger.error(
-        `${request.method} ${request.url} - ${status}: ${errorResponse.message}`,
+        `${request.method} ${request.url} - ${status.toString()}: ${errorResponse.message}`,
         exception.stack
       );
     } else {
-      this.logger.warn(`${request.method} ${request.url} - ${status}: ${errorResponse.message}`);
+      this.logger.warn(
+        `${request.method} ${request.url} - ${status.toString()}: ${errorResponse.message}`
+      );
     }
 
     response.status(status).json(errorResponse);
@@ -50,24 +52,27 @@ export class HttpExceptionFilter implements ExceptionFilter {
     if (typeof response === 'string') {
       return response;
     }
-    if (typeof response === 'object' && response !== null) {
-      const obj = response as Record<string, unknown>;
-      if (typeof obj.message === 'string') {
-        return obj.message;
-      }
-      if (Array.isArray(obj.message)) {
-        return obj.message[0] || 'Validation failed';
-      }
+    // Response is an object if we reach here
+    const obj = response as Record<string, unknown>;
+    if (typeof obj.message === 'string') {
+      return obj.message;
+    }
+    if (Array.isArray(obj.message)) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      const firstMsg = obj.message[0];
+      return typeof firstMsg === 'string' ? firstMsg : 'Validation failed';
     }
     return 'An error occurred';
   }
 
   private extractDetails(response: string | object): string[] | undefined {
-    if (typeof response === 'object' && response !== null) {
-      const obj = response as Record<string, unknown>;
-      if (Array.isArray(obj.message)) {
-        return obj.message;
-      }
+    // Only process if response is an object
+    if (typeof response === 'string') {
+      return undefined;
+    }
+    const obj = response as Record<string, unknown>;
+    if (Array.isArray(obj.message)) {
+      return obj.message.filter((msg): msg is string => typeof msg === 'string');
     }
     return undefined;
   }

@@ -65,7 +65,6 @@ const config: Config = {
     },
   },
   plugins: [
-    // @ts-expect-error - tailwindcss-animate doesn't provide types
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     require('tailwindcss-animate'),
   ],

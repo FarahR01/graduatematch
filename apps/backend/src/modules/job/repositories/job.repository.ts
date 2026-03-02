@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Job } from '../domain/job.entity';
+import { Job, JobStatus } from '../domain/job.entity';
 import { BaseRepository } from '../../../common/repositories/base.repository';
 
 /**
@@ -18,7 +18,7 @@ export class JobRepository extends BaseRepository<Job> {
    */
   async findPublished(): Promise<Job[]> {
     return this.jobRepository.find({
-      where: { status: 'published' as any },
+      where: { status: JobStatus.PUBLISHED },
       relations: ['company', 'skills'],
       order: { publishedAt: 'DESC' },
     });

@@ -25,7 +25,7 @@ export class MatchScore extends AppBaseEntity {
   score!: number;
 
   @Column({ type: 'jsonb', default: '{}' })
-  breakdown!: Record<string, any>;
+  breakdown!: Record<string, unknown>;
 
   @Column({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
   calculatedAt!: Date;

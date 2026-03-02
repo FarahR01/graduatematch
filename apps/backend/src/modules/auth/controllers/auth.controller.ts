@@ -3,7 +3,7 @@ import { ApiTags, ApiOperation, ApiResponse, ApiBearerAuth, ApiBody } from '@nes
 import { AuthService } from '../services/auth.service';
 import { RegisterDto, LoginDto, RefreshTokenDto, AuthResponseDto, TokensResponseDto } from '../dto';
 import { Public, CurrentUser } from '@/common';
-import { User } from '@/modules/user/domain/user.entity';
+import { User, UserRole } from '@/modules/user/domain/user.entity';
 import { AuthGuard } from '@nestjs/passport';
 
 /**
@@ -69,7 +69,13 @@ export class AuthController {
     description: 'Current user profile',
   })
   @ApiResponse({ status: 401, description: 'Unauthorized' })
-  async getCurrentUser(@CurrentUser() user: User) {
+  getCurrentUser(@CurrentUser() user: User): {
+    id: string;
+    email: string;
+    role: UserRole;
+    isActive: boolean;
+    createdAt: Date;
+  } {
     return {
       id: user.id,
       email: user.email,

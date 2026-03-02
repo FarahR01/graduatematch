@@ -50,14 +50,14 @@ export class HealthController {
     status: 503,
     description: 'Service is not ready',
   })
-  async readinessCheck(): Promise<{
+  readinessCheck(): {
     status: 'ok' | 'error';
     checks: Record<string, boolean>;
     timestamp: string;
-  }> {
+  } {
     // Add more health checks here (database, redis, etc.)
     const checks = {
-      database: await this.checkDatabase(),
+      database: this.checkDatabase(),
     };
 
     const allHealthy = Object.values(checks).every(Boolean);
@@ -80,7 +80,7 @@ export class HealthController {
   /**
    * Check database connectivity
    */
-  private async checkDatabase(): Promise<boolean> {
+  private checkDatabase(): boolean {
     // In real implementation, run a simple query
     // For now, return true as placeholder
     try {

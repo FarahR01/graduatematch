@@ -1,17 +1,6 @@
-import {
-  Column,
-  Entity,
-  OneToOne,
-  JoinColumn,
-  ManyToMany,
-  JoinTable,
-  OneToMany,
-  Index,
-} from 'typeorm';
+import { Column, Entity, OneToOne, JoinColumn, OneToMany, Index } from 'typeorm';
 import { AppBaseEntity } from '../../../common/entities/base.entity';
 import { User } from '../../user/domain/user.entity';
-import { Skill } from '../../skill/domain/skill.entity';
-import { Badge } from '../../badge/domain/badge.entity';
 import { GraduateSkill } from './graduate-skill.entity';
 import { GraduateBadge } from './graduate-badge.entity';
 import { Application } from '../../application/domain/application.entity';

@@ -14,4 +14,5 @@ import { BadgeController } from './controllers/badge.controller';
   controllers: [BadgeController],
   exports: [BadgeService],
 })
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class BadgeModule {}

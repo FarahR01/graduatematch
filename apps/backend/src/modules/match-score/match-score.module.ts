@@ -14,4 +14,5 @@ import { MatchScoreController } from './controllers/match-score.controller';
   controllers: [MatchScoreController],
   exports: [MatchScoreService],
 })
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class MatchScoreModule {}

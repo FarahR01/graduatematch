@@ -49,7 +49,7 @@ export abstract class BaseRepository<Entity extends AppBaseEntity> {
    * Update an entity
    */
   async update(id: string, data: DeepPartial<Entity>): Promise<Entity | null> {
-    await this.repository.update(id, data as Record<string, any>);
+    await this.repository.update(id, data as any);
     return this.findById(id);
   }
 

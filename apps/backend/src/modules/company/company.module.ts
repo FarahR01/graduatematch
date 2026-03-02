@@ -14,4 +14,5 @@ import { CompanyController } from './controllers/company.controller';
   controllers: [CompanyController],
   exports: [CompanyService],
 })
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class CompanyModule {}

@@ -10,19 +10,20 @@ export const ROLES_KEY = 'roles';
  * Roles decorator - Sets allowed roles for a route
  * Usage: @Roles('admin', 'company')
  */
-export const Roles = (...roles: string[]) => SetMetadata(ROLES_KEY, roles);
+export const Roles = (...roles: string[]): ReturnType<typeof SetMetadata> =>
+  SetMetadata(ROLES_KEY, roles);
 
 /**
  * Public decorator - Marks route as public (no auth required)
  */
 export const IS_PUBLIC_KEY = 'isPublic';
-export const Public = () => SetMetadata(IS_PUBLIC_KEY, true);
+export const Public = (): ReturnType<typeof SetMetadata> => SetMetadata(IS_PUBLIC_KEY, true);
 
 /**
  * ApiPagination decorator - Adds pagination query params to Swagger
  * Usage: @ApiPagination()
  */
-export const ApiPagination = () =>
+export const ApiPagination = (): ReturnType<typeof applyDecorators> =>
   applyDecorators(
     ApiQuery({
       name: 'page',

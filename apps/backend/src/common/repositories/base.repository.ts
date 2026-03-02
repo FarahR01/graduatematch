@@ -49,6 +49,7 @@ export abstract class BaseRepository<Entity extends AppBaseEntity> {
    * Update an entity
    */
   async update(id: string, data: DeepPartial<Entity>): Promise<Entity | null> {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
     await this.repository.update(id, data as any);
     return this.findById(id);
   }

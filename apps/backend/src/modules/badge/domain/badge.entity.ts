@@ -17,7 +17,7 @@ export class Badge extends AppBaseEntity {
   name!: string;
 
   @Column({ type: 'jsonb', default: '{}' })
-  criteria!: Record<string, any>;
+  criteria!: Record<string, unknown>;
 
   // Relations
   @OneToMany(() => GraduateBadge, (badge) => badge.badge, {

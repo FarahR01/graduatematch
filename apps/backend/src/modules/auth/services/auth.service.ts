@@ -104,7 +104,7 @@ export class AuthService {
         throw new UnauthorizedException('Invalid refresh token');
       }
 
-      return this.generateTokens(user);
+      return await this.generateTokens(user);
     } catch {
       throw new UnauthorizedException('Invalid refresh token');
     }
@@ -116,7 +116,7 @@ export class AuthService {
   async validateToken(token: string): Promise<User | null> {
     try {
       const payload = this.jwtService.verify<TokenPayload>(token);
-      return this.userService.findById(payload.sub);
+      return await this.userService.findById(payload.sub);
     } catch {
       return null;
     }

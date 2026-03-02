@@ -15,4 +15,5 @@ import { UserController } from './controllers/user.controller';
   controllers: [UserController],
   exports: [UserService],
 })
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class UserModule {}

@@ -1,6 +1,5 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppDataSource } from './data-source';
 import {
   User,
   Graduate,
@@ -64,4 +63,5 @@ import {
   ],
   exports: [TypeOrmModule],
 })
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class DatabaseModule {}

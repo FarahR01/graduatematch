@@ -18,18 +18,18 @@ export class RolesGuard implements CanActivate {
     ]);
 
     // If no roles required, allow access
-    if (!requiredRoles || requiredRoles.length === 0) {
+    if (requiredRoles.length === 0) {
       return true;
     }
 
-    const request = context.switchToHttp().getRequest();
-    const user = request.user as User;
+    const request = context.switchToHttp().getRequest<{ user?: User }>();
+    const user = request.user;
 
     if (!user) {
       throw new ForbiddenException('User not found in request');
     }
 
-    const hasRole = requiredRoles.some((role) => user.role === role);
+    const hasRole = requiredRoles.includes(user.role);
 
     if (!hasRole) {
       throw new ForbiddenException(`Access denied. Required roles: ${requiredRoles.join(', ')}`);

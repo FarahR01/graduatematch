@@ -14,4 +14,5 @@ import { GraduateController } from './controllers/graduate.controller';
   controllers: [GraduateController],
   exports: [GraduateService],
 })
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class GraduateModule {}

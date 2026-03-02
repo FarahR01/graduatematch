@@ -7,7 +7,7 @@ export { validate, EnvironmentVariables, Environment } from './env.validation';
  * All configuration modules for loading
  */
 export const configurations = [
-  async () => (await import('./app.config')).appConfig,
-  async () => (await import('./database.config')).databaseConfig,
-  async () => (await import('./jwt.config')).jwtConfig,
+  async (): Promise<unknown> => (await import('./app.config')).appConfig,
+  async (): Promise<unknown> => (await import('./database.config')).databaseConfig,
+  async (): Promise<unknown> => (await import('./jwt.config')).jwtConfig,
 ];

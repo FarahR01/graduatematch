@@ -30,4 +30,5 @@ import { UserModule } from '../user/user.module';
   providers: [AuthService, JwtStrategy],
   exports: [AuthService, JwtModule],
 })
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class AuthModule {}

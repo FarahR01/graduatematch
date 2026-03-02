@@ -14,4 +14,5 @@ import { ApplicationController } from './controllers/application.controller';
   controllers: [ApplicationController],
   exports: [ApplicationService],
 })
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class ApplicationModule {}

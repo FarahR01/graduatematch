@@ -7,7 +7,7 @@ import { AppDataSource } from './data-source';
  */
 export const TypeOrmProvider = {
   provide: 'DATA_SOURCE',
-  async useFactory() {
+  async useFactory(): Promise<typeof AppDataSource> {
     if (!AppDataSource.isInitialized) {
       return await AppDataSource.initialize();
     }

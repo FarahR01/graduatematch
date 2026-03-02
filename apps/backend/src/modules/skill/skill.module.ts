@@ -14,4 +14,5 @@ import { SkillController } from './controllers/skill.controller';
   controllers: [SkillController],
   exports: [SkillService],
 })
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class SkillModule {}

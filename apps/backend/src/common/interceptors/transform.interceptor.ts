@@ -19,11 +19,13 @@ export interface TransformedResponse<T> {
 export class TransformInterceptor<T> implements NestInterceptor<T, TransformedResponse<T>> {
   intercept(context: ExecutionContext, next: CallHandler): Observable<TransformedResponse<T>> {
     return next.handle().pipe(
-      map((data) => ({
-        success: true,
-        data,
-        timestamp: new Date().toISOString(),
-      }))
+      map(
+        (data: T): TransformedResponse<T> => ({
+          success: true,
+          data,
+          timestamp: new Date().toISOString(),
+        })
+      )
     );
   }
 }

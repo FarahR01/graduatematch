@@ -44,4 +44,5 @@ import { appConfig, databaseConfig, jwtConfig } from './config';
   controllers: [AppController],
   providers: [AppService],
 })
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class AppModule {}

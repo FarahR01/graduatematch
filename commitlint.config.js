@@ -1,36 +1,36 @@
-# Commitlint Configuration for GraduateMatch
+// Commitlint Configuration for GraduateMatch
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   
   rules: {
-    # Enforce specific types
+    // Enforce specific types
     'type-enum': [2, 'always', [
-      'feat',      # New feature
-      'fix',       # Bug fix  
-      'docs',      # Documentation changes
-      'style',     # Code style (formatting, no logic change)
-      'refactor',  # Code refactoring
-      'perf',      # Performance improvements
-      'test',      # Adding or fixing tests
-      'build',     # Build system changes
-      'ci',        # CI/CD changes
-      'chore',     # Maintenance tasks
-      'revert'     # Reverting changes
+      'feat',      // New feature
+      'fix',       // Bug fix  
+      'docs',      // Documentation changes
+      'style',     // Code style (formatting, no logic change)
+      'refactor',  // Code refactoring
+      'perf',      // Performance improvements
+      'test',      // Adding or fixing tests
+      'build',     // Build system changes
+      'ci',        // CI/CD changes
+      'chore',     // Maintenance tasks
+      'revert'     // Reverting changes
     ]],
     
-    # Enforce specific scopes for our project
+    // Enforce specific scopes for our project
     'scope-enum': [2, 'always', [
-      'auth',      # Authentication & authorization
-      'api',       # Backend API changes
-      'db',        # Database changes
-      'matching',  # Job matching algorithm
-      'ui',        # Frontend UI components
-      'config',    # Configuration changes
-      'deps',      # Dependencies
-      'release'    # Release-related changes
+      'auth',      // Authentication & authorization
+      'api',       // Backend API changes
+      'db',        // Database changes
+      'matching',  // Job matching algorithm
+      'ui',        // Frontend UI components
+      'config',    // Configuration changes
+      'deps',      // Dependencies
+      'release'    // Release-related changes
     ]],
     
-    # Message format rules
+    // Message format rules
     'header-max-length': [2, 'always', 72],
     'body-max-line-length': [2, 'always', 100],
     'subject-case': [2, 'always', 'lower-case'],
@@ -40,13 +40,13 @@ module.exports = {
     'type-empty': [2, 'never'],
     'scope-case': [2, 'always', 'lower-case'],
     
-    # Custom rules for our workflow
+    // Custom rules for our workflow
     'subject-min-length': [2, 'always', 10],
     'body-leading-blank': [2, 'always'],
     'footer-leading-blank': [2, 'always']
   },
   
-  # Custom plugins for additional validation
+  // Custom plugins for additional validation
   plugins: [
     {
       rules: {
@@ -54,7 +54,7 @@ module.exports = {
           const { footer } = parsed;
           if (!footer) return [true];
           
-          # Check for issue references like "Closes: #123" or "Fixes: #456"
+          // Check for issue references like "Closes: #123" or "Fixes: #456"
           const ticketPattern = /(Closes|Fixes|Refs?):\s*#\d+/i;
           return [
             ticketPattern.test(footer),
@@ -65,14 +65,14 @@ module.exports = {
     }
   ],
   
-  # Ignore certain commit patterns (useful for automated commits)
+  // Ignore certain commit patterns (useful for automated commits)
   ignores: [
     (commit) => commit.includes('WIP'),
     (commit) => commit.includes('Merge branch'),
     (commit) => commit.includes('Merge pull request')
   ],
   
-  # Default commit message length
+  // Default commit message length
   defaultIgnores: true,
   helpUrl: 'https://github.com/conventional-changelog/commitlint/#what-is-commitlint'
 };

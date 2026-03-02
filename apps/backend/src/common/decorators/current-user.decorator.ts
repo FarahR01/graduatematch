@@ -7,7 +7,7 @@ import { User } from '@/modules/user/domain/user.entity';
  * Must be used with JwtAuthGuard
  */
 export const CurrentUser = createParamDecorator(
-  (data: keyof User | undefined, ctx: ExecutionContext): User | null => {
+  (data: keyof User | undefined, ctx: ExecutionContext): unknown => {
     const request = ctx.switchToHttp().getRequest<{ user?: User }>();
     const user = request.user;
 
@@ -17,7 +17,7 @@ export const CurrentUser = createParamDecorator(
 
     // If a specific property is requested, return that property value
 
-    return data ? (user[data] as User) : user;
+    return data ? (user[data] as unknown) : user;
   }
 );
 
